@@ -31,8 +31,9 @@ class HomePage(BasePage):
         # self.driver.switch_to.alert.accept("Accept All")
 
 
-        element = self.driver.find_element(By.XPATH, "(//div[@title='Test automation project']//div)[2]")
-        self.driver.wait_until(lambda: self.driver.find_element(element))
+        element = self.driver.find_element(By.XPATH, "//div[@title='Test automation project']")
+        time.sleep(10)
+        # self.driver.wait_until(lambda: self.driver.find_element(element))
         action = ActionChains(self.driver)
         action.move_to_element(element).perform()
         action.click(element).perform()
